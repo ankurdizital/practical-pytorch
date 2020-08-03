@@ -2,7 +2,7 @@
 
 import torch
 import torch.nn as nn
-from torch.autograd import Variable
+
 
 class RNN(nn.Module):
     def __init__(self, input_size, hidden_size, output_size, n_layers=1):
@@ -23,5 +23,5 @@ class RNN(nn.Module):
         return output, hidden
 
     def init_hidden(self):
-        return Variable(torch.zeros(self.n_layers, 1, self.hidden_size))
+        return torch.zeros(self.n_layers, 1, self.hidden_size)
 
